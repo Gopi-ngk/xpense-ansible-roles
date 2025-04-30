@@ -37,7 +37,7 @@
 
 - name: copy expense config
   ansible.builtin.template:
-    src: xpense.conf.j2
+    src: xpense.conf
     dest: /etc/nginx/default.d/xpense.conf
   notify: 
   - Restart Nginx
