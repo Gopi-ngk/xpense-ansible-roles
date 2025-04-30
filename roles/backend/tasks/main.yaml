@@ -45,16 +45,16 @@
   community.general.npm:
     path: /app
 
-# - name: copy backend service
-#   ansible.builtin.copy: #it will search in files folder
-#     src: backend.service
-#     dest: /etc/systemd/system/backend.service
-
-
 - name: copy backend service
-  ansible.builtin.template: #it will search in templates folder
-    src: backend.service.j2
+  ansible.builtin.copy: #it will search in files folder
+    src: backend.service
     dest: /etc/systemd/system/backend.service
+
+
+# - name: copy backend service
+#   ansible.builtin.template: #it will search in templates folder
+#     src: backend.service.j2
+#     dest: /etc/systemd/system/backend.service
 
 - name: install python libs
   ansible.builtin.pip:
